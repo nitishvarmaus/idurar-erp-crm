@@ -8,7 +8,7 @@ services:
     ports:
       - "8888:8888"
     environment:
-      - NODE_ENV=development
+      - NODE_ENV=production
       - DATABASE=mongodb://mongo:27017/local-idurar-erp-crp
       - PORT=8888
       - NODE_OPTIONS=--openssl-legacy-provider
@@ -30,7 +30,7 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - NODE_ENV=development
+      - NODE_ENV=production
       - REACT_APP_API_URL=http://backend:8888/api
       - NODE_OPTIONS=--openssl-legacy-provider
 

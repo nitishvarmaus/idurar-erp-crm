@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "devzery_middleware_express": "github:devzery/devzery_middleware_express"
+  }
+}

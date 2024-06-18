@@ -4,6 +4,7 @@ const cors = require('cors');
 const compression = require('compression');
 
 const cookieParser = require('cookie-parser');
+const devzeryMiddleware = require('devzery_middleware_express').default;
 
 const coreAuthRouter = require('./routes/coreRoutes/coreAuth');
 const coreApiRouter = require('./routes/coreRoutes/coreApi');
@@ -15,6 +16,11 @@ const errorHandlers = require('./handlers/errorHandlers');
 const erpApiRouter = require('./routes/appRoutes/appApi');
 
 const fileUpload = require('express-fileupload');
+
+const devzeryConfig = {
+  apiKey: '6I7SNwDD3CVEU0HmsTFBDm',
+  sourceName: 'idurar-erp-crm',
+  };
 // create our Express app
 const app = express();
 
@@ -25,6 +31,8 @@ app.use(
   })
 );
 
+
+app.use(devzeryMiddleware(devzeryConfig));
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
